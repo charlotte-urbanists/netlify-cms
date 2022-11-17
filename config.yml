@@ -4,7 +4,7 @@ backend:
   branch: main
 local_backend: true
 
-site_url: https://cms.clturban.ist
+site_url: https://www.clturban.ist
 media_folder: images
 collections:
   # Our blog posts
