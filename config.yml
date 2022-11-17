@@ -1,8 +1,10 @@
 backend:
   name: git-gateway
-  branch: master
+  repo: charlotte-urbanists/netlify-cms
+  branch: main
+local_backend: true
 
-site_url: https://www.clturban.ist
+site_url: https://cms.clturban.ist
 media_folder: images
 collections:
   # Our blog posts
