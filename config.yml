@@ -7,16 +7,17 @@ local_backend: true
 site_url: https://www.clturban.ist
 media_folder: images
 collections:
-  # Our blog posts
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Post" # Used in the UI
-    folder: "posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
-      - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Site Information"
+    name: "site_info"
+    files:
+      - label: "Organization Values"
+        name: "org_values"
+        file: content/site_info/org_values.yml
+        fields:
+          - label: Values
+            name: values
+            label_singular: Value
+            widget: list
+            fields:
+              - { label: Value, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
