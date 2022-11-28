@@ -21,3 +21,25 @@ collections:
             fields:
               - { label: Value, name: title, widget: string }
               - { label: Description, name: description, widget: text }
+      - label: "Charlotte Urbanists in the news"
+        name: "news_articles"
+        file: content/site_info/news_articles.yml
+        fields:
+          - label: News Articles
+            name: article
+            label_singular: News Article
+            widget: list
+            fields:
+              - { label: Link, name: article_link, widget: string }
+              - {
+                  label: Article Title,
+                  name: article_title,
+                  widget: string,
+                  hint: A title which the user sees,
+                }
+              - {
+                  label: Date of publishing,
+                  name: article_date,
+                  widget: datetime,
+                  format: "L",
+                }
