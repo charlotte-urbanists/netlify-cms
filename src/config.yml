@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  repo: charlotte-urbanists/netlify-cms
+  branch: main
+local_backend: true
+
+site_url: https://www.clturban.ist
+media_folder: images
+collections:
+  - label: "Site Information"
+    name: "site_info"
+    files:
+      - label: "Organization Values"
+        name: "org_values"
+        file: content/site_info/org_values.yml
+        fields:
+          - label: Values
+            name: values
+            label_singular: Value
+            widget: list
+            fields:
+              - { label: Value, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+      - label: "Charlotte Urbanists in the news"
+        name: "news_articles"
+        file: content/site_info/news_articles.yml
+        fields:
+          - label: News Articles
+            name: article
+            label_singular: News Article
+            widget: list
+            fields:
+              - { label: Link, name: article_link, widget: string }
+              - {
+                  label: Article Title,
+                  name: article_title,
+                  widget: string,
+                  hint: A title which the user sees,
+                }
+              - {
+                  label: Date of publishing,
+                  name: article_date,
+                  widget: datetime,
+                  format: "L",
+                  time_format: false,
+                }
